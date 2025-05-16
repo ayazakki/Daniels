@@ -48,7 +48,7 @@ h6,
 #navbar{
   -webkit-transition: background-color 0.6s ease, color 0.6s ease;
   -o-transition: background-color 0.6s ease, color 0.6s ease;
-  transition: background-color 0.6s ease, color 0.6s ease;
+  transition: background-color 1s ease, color 1s ease;
 }
 #navbar.scrolled{
   background-color: var(--default-color-light);

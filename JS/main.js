@@ -7,7 +7,7 @@ var typed = new Typed('#typing', {
   
 });
 
-const navbar = document.getElementById("navbar");
+/* const navbar = document.getElementById("navbar");
 const aboutSection = document.getElementById("about");
 window.addEventListener("scroll", function () {
   const aboutSectionTop = aboutSection.getBoundingClientRect().top + window.scrollY;
@@ -20,4 +20,28 @@ window.addEventListener("scroll", function () {
     navbar.style.display = "block";
     navbar.classList.remove("scrolled");
   }
-});
+}); */
+
+// Using jquery
+const navbar=$("#navbar")
+const navbarHeight=$("#navbar").outerHeight();
+$(window).on("scroll",function(){
+  let fromTop=$(window).scrollTop()
+  let aboutOffset=$("#about").offset().top
+  console.log($(window).scrollTop());
+  if(fromTop> aboutOffset-navbarHeight){
+    navbar.css({
+      "display":"block"
+    })
+    navbar.addClass("scrolled")
+  }else if(fromTop>0){
+    navbar.css({
+      "display":"none"
+    })
+  }else{
+    navbar.css({
+      "display":"block"
+    })
+    navbar.removeClass("scrolled")
+  }
+})
